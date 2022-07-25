@@ -1,0 +1,92 @@
+.advantages {
+  position: relative;
+  padding-top: 7.2rem;
+  padding-bottom: 7.9rem;
+  background: linear-gradient(180deg, #F4F4F4 0%, #E9E9E9 100%);
+  &__bg {
+    position: absolute;
+    width: 100%;
+    top: -3.5rem;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem 0;
+    padding-top: 4.1rem;
+  }
+  &__item {
+    width: 27.3rem;
+  }
+  &__picture {
+    @include centered;
+    width: 9.9rem;
+    height: 9.9rem;
+    background: #FFFFFF;
+    border-radius: 50%;
+  }
+  &__img {
+    @include centered;
+    width: 7.9rem;
+    height: 7.9rem;
+    background: #CF3535;
+    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.13);
+    border-radius: 50%;
+    svg {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    span {
+      margin-top: -1.5rem;
+      @include font(700, 1.6rem, 150%);
+      color: rgba(0, 0, 0, 0.17);
+    }
+  }
+  &__bottom {
+    @include font(400, 1.6rem, 150%);
+    text-align: center;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 48em) {
+  .advantages {
+    &__items {
+      gap: 8rem 0;
+    }
+    &__item {
+      width: 100%;
+    }
+    &__bottom {
+      font-size: 3rem;
+    }
+    &__picture {
+      @include centered;
+      width: 14rem;
+      height: 14rem;
+    }
+    &__img {
+      @include centered;
+      width: 12rem;
+      height: 12rem;
+    }
+    &__top {
+      span {
+        @include font(700, 3rem, 150%);
+      }
+    }
+  }
+}

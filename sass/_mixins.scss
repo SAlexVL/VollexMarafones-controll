@@ -1,0 +1,48 @@
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin even {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin circle ($width, $height, $border-radius) {
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+}
+@mixin font ($weight, $size, $height) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+@mixin borderBot ($width) {
+  content: '';      
+  height: .5rem;
+  background-color: #DA3939;
+  position: absolute;
+  bottom: 0;      
+  width: $width;
+  transition: all .25s linear;
+}
+@mixin borderAngle ($width, $height) {
+  content: '';
+  position: absolute;
+  width: $width;
+  height: $height;
+  flex-shrink: 0;
+  background: url('../img/icons/video-border.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+// @mixin after-line ($width) {
+//   content: '';
+//   display: block;
+//   width: $width;
+//   height: .3rem;
+//   margin-top: .5rem;
+//   background-color: $back-others;
+// }

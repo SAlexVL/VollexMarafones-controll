@@ -1,0 +1,220 @@
+.title {
+  text-align: center;
+  @include centered;
+  flex-direction: column;
+  &__header {
+    position: relative;
+    @include font(700, 3.6rem, 133%);
+    margin-bottom: 1.8rem;
+    width: fit-content;
+    &--small {
+      @include font(700, 2.4rem, 133%);
+      color: #FFFFFF;
+    }
+  }
+  &__subheader {
+    max-width: 68rem;
+    @include font(400, 1.6rem, 150%);
+    color: #5C5C5C;
+    &--small {
+      @include font(400, 1.8rem, 150%);
+      color: #FFFFFF;
+    }
+  }
+  &__border {
+    &-mounting::after {
+      @include borderBot(46.2rem);
+      right: 0;
+    }
+    &-install::after {
+      @include borderBot(64.5rem);
+      left: 0; 
+    }
+    &-advantages::after {
+      @include borderBot(25.6rem);
+      right: 0;
+    }
+    &-why::after {
+      @include borderBot(67.3rem);
+      right: 0;
+    }    
+    &-brands::after {
+      @include borderBot(43.6rem);
+      right: 0;
+    }
+    &-video::after {
+      @include borderBot(45.6rem);
+      right: 0;
+    }
+    &-price::after {
+      @include borderBot(28.1rem);
+      right: 0;
+    }
+    &-information::after {
+      @include borderBot(22.8rem);
+      right: 0;
+    }
+    &-reviews::after {
+      @include borderBot(13.7rem);
+      left: 0;
+    }
+    &-example::after {
+      @include borderBot(22.4rem);
+      right: 0;
+    }
+    &-services::after {
+      @include borderBot(28.7rem);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-question::after {
+      @include borderBot(38.3rem);
+      right: 0;
+    }
+  }
+  &--left {
+    max-width: 77.5%;
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 28rem;
+  }
+  &--center {
+    max-width: 77.5%;
+    text-align: center;
+    align-items: center;
+    padding-left: 28rem;
+    .title__header--small {
+      margin-bottom: 4.5rem;
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .title {
+    &__border {
+      &-mounting:hover {
+        &::after {
+          width: 100%;
+          transition: width .25s ease-out .25s;
+        }
+      }
+      &-install:hover {
+        &::after {
+          width: 100%;
+          transition: width .25s ease-out .25s;      
+        }
+      }
+      &-advantages:hover {
+        &::after {
+          width: 100%;
+          transition: width .25s ease-out .25s;      
+        }
+      }
+      &-why::after {
+        @include borderBot(67.3rem);
+        right: 0;      
+      }
+      &-brands::after {
+        @include borderBot(43.6rem);
+        right: 0;      
+      }
+      &-video::after {
+        @include borderBot(45.6rem);
+        right: 0;
+      }
+      &-price::after {
+        @include borderBot(28.1rem);
+        right: 0;
+      }
+      &-information::after {
+        @include borderBot(22.8rem);
+        right: 0;
+      }
+      &-example::after {
+        @include borderBot(22.4rem);
+        right: 0;
+      }
+      &-reviews::after {
+        @include borderBot(13.8rem);
+        left: 0;
+      }
+      &-services::after {
+        @include borderBot(28.7rem);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-question::after {
+        @include borderBot(38.3rem);
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .title {
+    &__header {
+      @include font(700, 4.6rem, 133%);
+      margin-bottom: 3rem;
+    }
+    &__subheader {
+      font-size: 3rem;
+    }
+    &__border {
+      &-mounting::after {
+        width: 42.2rem;
+        right: 7rem;
+      }
+      &-install::after {
+        width: 32rem;
+        left: 12rem;
+      }
+      &-advantages::after {
+        width: 33rem;
+        left: 14rem;
+      }
+      &-why::after {
+        width: 22.5rem;
+        left: 17rem;
+      }
+      &-brands::after {
+        width: 31rem;
+        right: 0;
+      }
+      &-video::after {
+        width: 42rem;
+        left: 7rem;
+      }
+      &-price::after {
+        width: 20rem;
+        left: 18rem;
+      }
+      &-information::after {
+        width: 29.8rem;
+        left: 13rem;
+      }
+      &-reviews::after {
+        width: 18rem;
+      }
+      &-question::after {
+        width: 20rem;
+        left: 18rem;
+      }
+    }
+    &--left {
+      max-width: 100%;
+      @include centered;
+      padding-left: 0;
+      text-align: center;
+    }
+    &--center {
+      max-width: 100%;
+      @include centered;
+      padding-left: 0;
+      margin-bottom: 4rem;
+      .title__header--small {
+        margin-bottom: 4.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.brands {
+  position: relative;
+  padding-bottom: 6rem;
+  &__slider {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+  }
+  &__slide {
+    padding: 3rem 7.2rem;
+    picture {
+      display: block;
+      width: 12.5rem;
+      height: 5.7rem;
+      transition: all .25s linear;
+    }
+    &::before {
+      @include borderAngle (3.1rem, 2.5rem);
+      left: -.35rem;
+      top: -.35rem;
+    }
+    &::after {
+      @include borderAngle (3.1rem, 2.5rem);
+      transform: rotate(180deg);
+      right: -.45rem;
+      bottom: -.35rem;
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .brands {
+    .slider__arrow {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .brands {
+    &__slide:hover {
+      picture {
+        transform: scale(1.5);
+        transition: .25s ease-out;
+      }      
+    }
+  }
+}

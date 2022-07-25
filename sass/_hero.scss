@@ -1,0 +1,124 @@
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #F4F4F4 0%, #E9E9E9 100%);
+  z-index: 1;
+  &::after {
+    content: "";
+    display: block;
+    width: .6rem; 
+    height: 31.7rem;
+    background: rgba(0, 0, 0, 0.04); 
+    position: absolute;
+    left: 10rem;
+    bottom: -4.5rem;
+    transform: rotate(135deg);
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  &__wrap {
+    padding-top: 19rem;
+    padding-bottom: 17.3rem;
+  }
+  &__bg {
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    img {
+      width: 91%;
+      margin-left: 5rem;
+    }
+  }
+  &__header {
+    max-width: 60rem;
+    margin-bottom: 1.8rem;
+    @include font(700, 5.8rem, 133%);
+    color: #000000;
+    span {
+      text-transform: uppercase;
+      color: #DA3939;
+    }
+  }
+  &__text {
+    max-width: 51.5rem;
+    margin-bottom: 3rem;
+    @include font(400, 1.6rem, 150%);
+    color: #5C5C5C;
+  }
+  &__decor {
+    width: 37rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: -.8rem;
+    z-index: -1;
+    img {
+      object-fit: cover;
+    }
+  }
+  &__pagination {
+    .swiper-pagination-bullet {
+      width: 2.2rem;
+      height: .5rem;
+      border-radius: 0%;
+    }
+    .swiper-pagination-bullet-active {
+      width: 7rem;
+      background: #DA3939;
+    }
+    &.swiper-pagination-horizontal {
+      bottom: 3.9rem;
+    }
+  }
+  &__sqr {
+    width: 8.2rem;
+    height: 9rem;
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 48em) {
+  .hero {
+    &::after {
+      height: 26.7rem;
+      left: 10rem;
+      bottom: -4.5rem;
+    }
+    &__bg {
+      bottom: -39rem;
+    }
+    &__decor {
+      width: 12rem;
+      bottom: -220rem;
+    }
+    &__header {
+      margin-bottom: 7rem;
+    }
+    &__text {
+      max-width: 100%;
+      font-size: 2.8rem;
+    }
+    .container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      .button-outline {
+        align-self: flex-start;
+      }
+    }
+    &__arrow {
+      &-prev {
+        left: 1rem;
+      }
+      &-next {
+        right: 1rem;
+      }
+    }
+  }
+}

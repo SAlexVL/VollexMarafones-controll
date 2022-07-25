@@ -1,0 +1,128 @@
+.why {
+  padding-top: 7.1rem;
+  padding-bottom: 7.1rem;
+  &__items {
+    margin-top: 3.3rem;
+    padding: 3.5rem 2.7rem 3rem 3rem;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    &:nth-child(1) {
+      margin-bottom: 7.5rem;
+      .why__icon {
+        width: 5.3rem;
+        height: 5.2rem;
+        margin-right: 2.1rem;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .why__img {
+        margin-right: 0;
+      }
+      .why__icon {
+        width: 4.7rem;
+        height: 4.3rem;
+        margin-right: 2.7rem;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+    }
+  }
+  &__img {
+    width: 44.3rem;
+    height: 29.1rem;
+    margin-right: 5.3rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    picture {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: all .25s linear;
+    }
+  }
+  &__description {
+    position: relative;
+    display: flex;
+    padding-top: 4rem;
+  }
+  &__icon {
+    &::before {
+      @include borderAngle (4.25rem, 4.8rem);
+      left: -2.5rem;
+      top: -.35rem;
+    }
+  }
+  &__text {
+    max-width: 53.5rem;    
+  }
+  &__header {
+    margin-bottom: 1.2rem;
+    @include font(700, 1.8rem, 133%);
+  }
+  &__subheader {
+    @include font(400, 1.4rem, 150%);
+    color: #5C5C5C;
+  }
+}
+
+@media (max-width: 48em) {
+  .why {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &:nth-child(1) {
+        margin-bottom: 7.5rem;
+        .why__img {
+          margin-right: 0;
+        }
+        .why__icon {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        .why__icon {
+          display: none;
+        }
+      }
+      &:nth-child(2n) {
+        flex-direction: column;
+      }
+    }
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+    &__text {
+      max-width: 100%;    
+    }
+    &__header {
+       font-size: 3rem;
+    }
+    &__subheader { 
+      font-size: 2.6rem;
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .why {
+    &__img:hover {
+      picture {
+        transform: scale(1.05);
+        transition: .25s ease-out;
+      }      
+    }
+  }
+}

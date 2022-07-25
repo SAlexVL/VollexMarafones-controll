@@ -1,0 +1,119 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  .container {
+    padding-top: 3.2rem;
+    @include even;
+  }
+  &__logo {
+    width: 18.1rem;
+    height: 4.8rem;
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+    margin-left: 6.8rem;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    min-width: 15.3rem;
+    &:not(:last-child) {
+      margin-right: 6.4rem;
+    }
+  }
+  &__img {
+    @include circle(3.2rem, 3.2rem, 50%);
+    box-shadow: 0 0 1rem -.3rem rgba(0, 0, 0, 0.2);
+    background-color: #FFFFFF;
+    @include centered;
+    flex-shrink: 0;
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  &__description {
+    margin-left: .7rem;
+  }
+  &__title {
+    @include font(300, 1.2rem, 133%);
+    color: #828282;
+  }
+  &__text {
+    @include font(400, 1.6rem, 131%);
+    color: #4F4F4F;
+  }
+  &__number {
+    display: block;
+    @include font(700, 1.8rem, 133%);
+    color: #CC3333;
+    margin-bottom: .7rem;
+    &-two {
+      display: none;
+    }
+  }
+  &__telephone {
+    display: flex;
+    align-items: center;
+  }
+  &__arrow {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    &-two {
+      transform: rotate(180deg);
+      display: none;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__phone {
+    margin-right: .6rem;
+  }
+  &__modal {
+    @include font(300, 1.2rem, 133%);
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  &__call {
+    display: flex;
+    flex-direction: column;
+  }
+  &__burger-wrap {
+    width: 4.3rem;
+    height: 4.3rem;
+    background: #FFFFFF;
+    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, 0.07);
+    border-radius: .5rem;
+    cursor: pointer;
+    @include centered;
+    svg {
+      width: 70%;
+      height: 70%;
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .header {
+    width: 100%;
+    &__items, &__call {
+      display: none;
+    }
+    &__logo {
+      width: 27.1rem;
+      height: 8.8rem;
+    }
+    &__burger-wrap {
+      width: 8.3rem;
+      height: 8.3rem;
+    }
+  }
+}

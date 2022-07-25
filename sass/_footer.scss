@@ -1,0 +1,290 @@
+.footer {
+  padding-top: 5rem;
+  background-color: #363636;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.3rem;
+    color: #FFFFFF;
+  }
+  &__name {
+    @include font(600, 1.6rem, 131%);
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+  }
+  &__tel {
+    max-width: 16rem;
+    @include font(400, 1.6rem, 131%);
+    a {      
+      color: #CC3333;
+    }
+    span {
+      color: #828282;
+    }
+  }
+  &__mail {
+    margin-bottom: 2rem;
+    a {
+      @include font(400, 1.6rem, 131%);
+      color: #CC3333;
+    }
+  }
+  &__title {
+    margin-bottom: 2rem;
+    @include font(700, 1.8rem, 133%);
+    text-transform: uppercase;    
+  }
+  &__social {
+    &-images {
+      display: flex;
+      align-items: center;
+      .footer__social-img {
+        svg {
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
+        }
+        &:first-child {
+          width: 2rem;
+          height: 2rem; 
+          margin-right: 1.6rem;         
+        }
+        &:last-child {
+          width: 3rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+  &__text {
+    max-width: 27rem;
+    @include font(400, 1.6rem, 131%);
+  }
+  &__item {
+    @include font(400, 1.6rem, 131%);
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    transition: all .25s linear;
+  }
+  &__menu {
+    &:first-child {
+      min-width: 31rem;
+    }
+    &:first-child > .footer__address:nth-child(2) > .footer__name {
+      &:before {
+        content: '';
+        display: block;
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-right: .5rem;
+        background: url('../img/icons/footer-address.svg'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+    &:first-child > .footer__address:nth-child(3) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+    }
+    &:first-child > .footer__address:nth-child(3) > .footer__tel > .footer__name {
+      &:before {
+        content: '';
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: .5rem;
+        background: url('../img/icons/footer-call.svg'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%; 
+      }
+    }
+    &:first-child > .footer__address:nth-child(3) > .footer__internet > .footer__mail > .footer__name {
+      &:before {
+        content: '';
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: .5rem;
+        background: url('../img/icons/footer-mail.svg'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%; 
+      }
+    }
+  }
+  &__language {
+    margin-top: 2rem;
+    width: 17rem;
+    height: 4.7rem;
+  }
+  &__delivery {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top:.1rem solid #828282;
+    border-bottom:.1rem solid #828282;
+    @include font(400, 1.4rem, 136%);
+    color: #828282;
+  }
+  &__coin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  &__money {
+    &-title {
+      margin-right: 1.4rem;
+      @include font(400, 1.4rem, 136%);
+      color: #FFFFFF;
+    }
+    &-images {
+      display: flex;
+      align-items: center;
+    }
+    &-img:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+  &__copyright {
+    @include font(400, 1.4rem, 136%);
+    color: #828282;
+  }
+  &__system {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 48em) {
+  .footer {
+    &__wrap {
+      flex-direction: column;
+    }
+    &__menu {
+      &:first-child > .footer__address:nth-child(3) {
+        flex-direction: column;
+      }
+      &:not(:last-child) {
+        margin-bottom: 6rem;
+      }
+      &:first-child > .footer__address:nth-child(2) > .footer__name {
+        &:before {
+          width: 4rem;
+          height: 4rem;
+          margin-right: 2rem;
+        }
+      }
+      &:first-child > .footer__address:nth-child(3) > .footer__tel > .footer__name {
+        &:before {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 0;
+        }
+      }
+      &:first-child > .footer__address:nth-child(3) > .footer__internet > .footer__mail > .footer__name {
+        &:before {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 2rem;
+        }
+      }
+    }
+    &__coin {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      font-size: 2.8rem;
+    }
+    &__system {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__title {
+      font-size: 3.6rem;
+    }
+    &__name {
+      font-size: 3.2rem;
+      margin-bottom: 2rem;
+    }
+    &__text {
+      max-width: 95%;
+      font-size: 2.8rem;
+    }
+    &__tel {
+      font-size: 3.2rem;
+      max-width: 60%;
+      margin-bottom: 2rem;
+    }
+    &__internet {
+      margin-top: 2rem;
+    }
+    &__mail a {
+      font-size: 3.2rem;
+    }
+    &__address {
+      &:first-child {
+        margin-bottom: 2rem;
+      }
+    }
+    &__social {
+      &-images {
+        .footer__social-img {
+          &:first-child {
+            width: 6rem;
+            height: 6rem; 
+            margin-right: 2.6rem;         
+          }
+          &:last-child {
+            width: 6rem;
+            height: 5rem;
+          }
+        }
+      }
+    }
+    &__item {
+      font-size: 3.2rem;
+    }
+    &__language {
+      margin-top: 4rem;
+      width: 45%;
+      height: 7rem;
+    }
+    &__delivery {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      border-top:.2rem solid #828282;
+      border-bottom:.2rem solid #828282;
+      font-size: 2.8rem;
+    }
+    &__money {
+      &-title {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        font-size: 2.8rem;
+      }
+      &-img:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+    &__copyright {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .footer {
+    &__item:hover {
+      color: #CF3535;
+      margin-left: 1rem;
+      margin-right: -1rem;
+      transition: .25s linear;
+      cursor: pointer;
+    }
+  }
+}

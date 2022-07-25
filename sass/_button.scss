@@ -1,0 +1,60 @@
+.button {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  background: linear-gradient(90.11deg, #FB4747 0.52%, #CC3333 98.44%);
+  box-shadow: 0 .8rem 3rem -.5rem rgba(124, 23, 23, 0.2);
+  border-radius: 1rem;
+  @include font(700, 1.6rem, 131%);
+  color: #FFFFFF;
+  opacity: 1;
+  transition: .25s ease-out;
+  &__outline {
+    display: inline-block;
+    background: transparent;
+    padding: 3.2rem 1rem;
+    border: .1rem solid rgba(248, 70, 70, 0.05);
+    border-radius: 1rem;
+    transition: all .25s linear;
+  }
+  &__border {
+    padding: 2.8rem 1rem 2.3rem 1rem;
+    background: transparent;
+    border: .1rem solid rgba(248, 70, 70, 0.25);
+    border-radius: 1rem;
+    transition: all .25s linear;
+  }
+}
+
+@media (max-width: 48em) {
+  .button {
+    font-size: 2.4rem;
+  }
+}
+
+@keyframes pulse-1 {
+  from {
+    border: .1rem solid rgba(248, 70, 70, 0);
+  }
+
+  to {
+    border: .1rem solid rgba(248, 70, 70, 0.15);
+  }
+}
+
+@media (min-width: 48em) {
+  .button {
+    &__outline:hover {
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: pulse-1;
+      .button__border {
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: pulse-1;
+        .button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
